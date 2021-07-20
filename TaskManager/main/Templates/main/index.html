@@ -7,6 +7,15 @@
 {% block content %}
     <h1>Home Page</h1>
 
-
+    {% if tasks  %}
+    {% for el in tasks %}
+        <div class="alert-success mt-2">
+            <h3>{{ el.title }}</h3>
+            <p>{{ el.task }}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p>There is no tasks</p>
+    {% endif %}
 
 {% endblock %}
